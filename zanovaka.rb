@@ -23,8 +23,6 @@ get '/:gde' do |gde|
   return halt unless @conf
   @city = @conf[:places].sample
 
-  p COUNTRIES[@city[3]]
-
   today = Date.today
   first = Date.new(today.year + 1, 1, 1)
   @to_go = (first - today).to_i - 1
