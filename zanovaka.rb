@@ -19,7 +19,8 @@ get '/' do
 end
 
 get '/:gde' do |gde|
-  @conf = CONF[gde.to_sym]
+  @gde = gde.to_sym
+  @conf = CONF[@gde]
   return halt unless @conf
   @city = @conf[:places].sample
 
