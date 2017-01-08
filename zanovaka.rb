@@ -4,15 +4,15 @@ require 'date'
 
 CONF = {
   svet: {
-    places: CSV.read('./cities.txt', col_sep: "\t"),
+    places: CSV.read('./cities.txt', col_sep: "\t", external_encoding: 'utf-8'),
     zoom: 4..8
   },
   srbija: {
-    places: CSV.read('./srbija.txt', col_sep: "\t"),
+    places: CSV.read('./srbija.txt', col_sep: "\t", external_encoding: 'utf-8'),
     zoom: 9..12
   }
 }
-COUNTRIES = Hash[CSV.read('./countries.txt', col_sep: "\t")]
+COUNTRIES = Hash[CSV.read('./countries.txt', col_sep: "\t", external_encoding: 'utf-8')]
 
 get '/' do
   redirect to('/svet')
