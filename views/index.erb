@@ -1,29 +1,28 @@
 <div class="container text-center">
   <h1>
-    <small>Do kraja godine ima još</small> <%= @to_go %> <small>dana.</small>
+    <%= @city[1] %>, <%= @country %>
   </h1>
-  <p>
-    Pa sam hteo da ti predložim dobro mesto za proslaviti... Ako ti se ne dopada, samo reloaduj!
-  </p>
+  <div class="alt-names">
+    <ul class="list-inline">
+      <% @alt_names.each do |name| %>
+        <li><%= name %></li>
+      <% end %>
+    </ul>
+  </div>
 </div>
-<div class="container text-center">
-  <h1>
-    <%= @city[0] %>, <%= COUNTRIES[@city[3]] %>
-  </h1>
-</div>
-<div id="mapid" style="width: 100%; height: 400px;"></div>
+<div id="mapid" style="width: 100%; height: 500px;"></div>
 
 <script>
 
-  var mymap = L.map('mapid').setView([<%= @city[1] %>, <%= @city[2] %>], <%= @conf[:zoom].min %>);
+  var mymap = L.map('mapid').setView([<%= @city[4] %>, <%= @city[5] %>], <%= @min_zoom %>);
 
   L.tileLayer('https://api.mapbox.com/styles/v1/jablan/cixn0cayd000h2smv3c56i8h5/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiamFibGFuIiwiYSI6ImNpeG15OG93ZzAwMDgycW84OW81NzU2NDAifQ.UvfXX0l3pMsFPh7aKjKTgg', {
-    maxZoom: <%= @conf[:zoom].max %>,
+    maxZoom: <%= @max_zoom %>,
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
       '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
       'Imagery © <a href="http://mapbox.com">Mapbox</a>',
     id: 'mapbox.streets'
   }).addTo(mymap);
 
-  L.marker([<%= @city[1] %>, <%= @city[2] %>]).addTo(mymap);
+  L.marker([<%= @city[4] %>, <%= @city[5] %>]).addTo(mymap);
 </script>
