@@ -93,7 +93,6 @@ GU	Guam
 GW	Guinea-Bissau
 GY	Guyana
 HK	Hong Kong
-HM	Heard Island and McDonald Islands
 HN	Honduras
 HR	Croatia
 HT	Haiti
@@ -103,7 +102,6 @@ IE	Ireland
 IL	Israel
 IM	Isle of Man
 IN	India
-IO	British Indian Ocean Territory
 IQ	Iraq
 IR	Iran
 IS	Iceland
@@ -248,5 +246,3 @@ YT	Mayotte
 ZA	South Africa
 ZM	Zambia
 ZW	Zimbabwe
-CS	Serbia and Montenegro
-AN	Netherlands Antilles
