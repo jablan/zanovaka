@@ -31,17 +31,6 @@ CSV.foreach('./countries.txt', col_sep: "\t", external_encoding: 'utf-8') do |ro
   SLUGS[slug] = cc
 end
 
-CONF = {
-  svet: {
-    places: CSV.read('./cities.txt', col_sep: "\t", external_encoding: 'utf-8'),
-    zoom: 4..8
-  },
-  srbija: {
-    places: CSV.read('./srbija.txt', col_sep: "\t", external_encoding: 'utf-8'),
-    zoom: 9..12
-  }
-}
-
 get '/' do
   @city = ALL.sample
   @country = COUNTRIES[@city[8]]
